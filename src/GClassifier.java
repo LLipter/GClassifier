@@ -1,4 +1,3 @@
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashSet;
@@ -10,15 +9,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
-
-
-
 public class GClassifier {
 	
 	public static void usage() {
 		System.out.println("GClassifier input_file.json");
 	}
-	
 	
 	public static void judge(String filename) {
 		FileReader reader;
@@ -115,10 +110,6 @@ public class GClassifier {
 					is_1 = false;
 
 			}
-			
-			
-			
-			
 		}
 		
 		
@@ -151,14 +142,9 @@ public class GClassifier {
 			return;
 		}
 		
-		
 		for(String filename : args)
 			judge(filename);
 		
-
-		
-		
-			
 	}
 
 }
