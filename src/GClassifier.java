@@ -66,6 +66,8 @@ public class GClassifier {
 			return;
 		}
 
+		
+		boolean can_deduce = false;
 		boolean is_23 = true;
 		boolean is_3 = true;
 		boolean is_1 = true;
@@ -86,6 +88,19 @@ public class GClassifier {
 				return;
 			}
 			String left_side = str_arr[0];
+			if(left_side.equals(grammar.getAsString().substring(2,3)))
+				can_deduce = true;
+			boolean is_all_t = true;
+			for(int i=0;i<left_side.length();i++) {
+				if(Vn.contains(left_side.substring(i,i+1))) 
+					is_all_t = false;				
+			}
+			if(is_all_t) {
+				System.out.println("invalid input : production " + p + " no non-terminal detected on left side");
+				return;
+			}
+			
+			
 			String[] right_sides = str_arr[1].split("\\|");
 			if(left_side.length() > 1 || !Vn.contains(left_side))
 				is_23 = false;
@@ -110,6 +125,11 @@ public class GClassifier {
 					is_1 = false;
 
 			}
+		}
+		
+		if(!can_deduce) {
+			System.out.println("invalid input : no production begin with start symbol");
+			return;
 		}
 		
 		
