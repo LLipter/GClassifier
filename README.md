@@ -1,4 +1,4 @@
-#Run
+# Run
 
 `java -classpath .:gson-2.8.4.jar GClassifier input1.json input2.json input3.json input4.json input5.json input6.json`
 
